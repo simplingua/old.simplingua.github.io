@@ -26,7 +26,8 @@ function (filename, cb)
     /* DO SOMETHING WITH workbook HERE */
     //console.log((XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]])));
     //cb({XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]))();
-    cb((XLSX.utils.sheet_to_json(workbook.Sheets["词缀"]).concat((XLSX.utils.sheet_to_json(workbook.Sheets["词表"])))))();
+    //console.log(XLSX.utils.sheet_to_json(workbook.Sheets["词表"]));
+    cb(XLSX.utils.sheet_to_json(workbook.Sheets["词表"]))();
   }
 
   oReq.send();

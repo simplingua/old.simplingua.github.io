@@ -22,7 +22,7 @@ import DOM.HTML.Window (document) as DOM
 import DOM.Node.NonElementParentNode (getElementById) as DOM
 import DOM.Node.Types (ElementId(ElementId)) as DOM
 import React (createFactory, ReactElement) as R
-import React.DOM (a, blockquote, div, footer, form, h5, header', input, label, li, main', nav', p, text, ul) as R
+import React.DOM (a, blockquote, div, footer, form', h5, header', input, label, li, main', nav', p, text, ul) as R
 import React.DOM.Props as RP
 
 import Dictionary (Dictionary(..), queryDict)
@@ -35,10 +35,10 @@ render :: forall props. Render MyState props MyAction
 render dispatch _ dicts _ =
   let
     container = R.div [RP.className "container"]
-    inputArea = R.form [RP.property "onSubmit=\"return false;\""] <<<
+    inputArea = R.form' <<<
       singleton $ R.div [RP.className "input-field"] $
-        [ R.input [RP.className "center-align validate", RP._id "search", RP.typeof "search", RP.required true, RP.placeholder "Lexo de serka", RP.onInput \e -> dispatch (Query $ (unsafeCoerce e).target.value)] []
-        , R.label [RP.property "for=\"search\""] [R.text "SIMPLINGO"]
+        [ R.input [RP.className "center-align validate", RP._id "search", RP.typeof "search", RP.required true, RP.placeholder "Lexi de cerca", RP.onInput \e -> dispatch (Query $ (unsafeCoerce e).target.value)] []
+        , R.label [RP.property "for=\"search\""] [R.text "SIMPLINGUA"]
         ]
     resultList = R.div [RP.className "col s4"] <<< singleton <<< renderDictionary <$> dicts
     addHeader = R.header' <<< singleton
