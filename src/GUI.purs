@@ -44,7 +44,7 @@ render dispatch _ dicts _ =
     addHeader = R.header' <<< singleton
     navi = R.nav' <<< singleton <<< R.div [RP.className "nav-wrapper"]  <<< singleton -- R.div [RP.className "row"] [R.div [RP.className "col s3"] [l], R.div [RP.className "col s9"] [i]]
     mainBody = R.main' <<< singleton $ container $ [R.div [RP.className "row"] resultList]
-    links = linkList  "grammar.pdf" "pronunciation.pdf" "simplingua.xlsx"
+    links = linkList  "grammar.doc" "pronunciation.pdf" "simplingua.xlsx"
   in
     [navi inputArea, mainBody, myFooter links]
 
@@ -140,7 +140,7 @@ myFooter links =
             ]
         , R.div [ RP.className "footer-copyright" ]
             [ R.div [ RP.className "container" ]
-                [ R.text "© 2016-2017 Simplingua BETA 0.3.1"
+                [ R.text "© 2016-2017 Simplingua BETA 0.3.2"
                 , R.a [ RP.className "grey-text text-lighten-4 right", RP.href "#!" ] [ R.text "More Details" ]
                 ]
             ]
