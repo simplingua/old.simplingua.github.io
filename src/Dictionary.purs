@@ -12,7 +12,7 @@ import Data.Either (Either(..))
 import Data.Function.Uncurried (Fn2, runFn2)
 import Data.Maybe (Maybe(..))
 import Data.String (Pattern(..), charAt, contains, indexOf, joinWith, split, toLower)
-import Prelude (class Show, Unit, bind, pure, show, ($), (<>), (=<<), (==), (>>=), (<$>))
+import Prelude (class Show, Unit, bind, pure, ($), (<>), (>>=), (<$>))
 
 import Data.Argonaut
 import Control.Monad.Except (throwError)

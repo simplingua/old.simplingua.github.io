@@ -13,6 +13,7 @@
     "test": "test"
   },
   "scripts": {
+    "dist": " pulp browserify -O | uglifyjs --mangle --compress --toplevel  >  index.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
